@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASY TOP UP | Free Fire Top Up</title>
+<style>
+:root{--green:#16a34a;--dark:#15251b;--muted:#64748b;--line:#e8eee9;--soft:#f4faf5}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#fff;color:#17231b}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.wrap{max-width:1120px;margin:auto;padding:0 18px}
+.top{height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:23px;font-weight:900;color:var(--dark);letter-spacing:.3px}.logo span{color:var(--green)}
+nav{display:flex;gap:22px;align-items:center}nav a{color:#34443a;text-decoration:none;font-size:14px;font-weight:700}
+.btn{background:var(--green);color:#fff;border:0;border-radius:9px;padding:12px 17px;font-weight:800;text-decoration:none;display:inline-block;cursor:pointer}
+.hero{margin:25px auto 30px;background:linear-gradient(110deg,#102a1b,#1b713b);border-radius:20px;padding:36px;color:white;display:flex;align-items:center;justify-content:space-between;gap:25px;overflow:hidden}
+.hero h1{font-size:36px;margin:0 0 10px}.hero p{margin:0 0 20px;color:#e0f3e5;line-height:1.6}.hero .tag{display:inline-block;background:#ffffff20;border:1px solid #ffffff50;padding:7px 12px;border-radius:30px;font-size:12px;margin-bottom:14px}
+.hero-art{font-size:86px;filter:drop-shadow(0 12px 12px #0004)}
+.section{margin:32px auto}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:15px}.section h2{font-size:23px;margin:0}.sub{color:var(--muted);font-size:13px;margin-top:5px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff;box-shadow:0 5px 18px #17351e08;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #17351e12}
+.product-icon{height:76px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:38px;margin-bottom:13px}
+.card h3{font-size:16px;margin:0 0 6px}.card p{font-size:12px;color:var(--muted);margin:0 0 12px}
+.price{font-size:18px;font-weight:900;color:var(--green);margin:8px 0 12px}
+.card button{width:100%;padding:10px;border:0;border-radius:8px;background:#eaf7ed;color:#16743a;font-weight:800;cursor:pointer}
+.offer{background:#fff9e9;border-color:#f5e4b5}.offer .product-icon{background:#fff0c9}
+.notice{background:#f4faf5;border:1px solid #dcefe0;border-radius:12px;padding:15px;color:#35523d;font-size:13px;line-height:1.6}
+.order{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form,.info{border:1px solid var(--line);border-radius:15px;padding:20px}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dce5de;border-radius:8px;font:inherit;background:white}
+footer{margin-top:45px;background:#f7faf7;padding:28px 0;color:#64746a;font-size:13px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}nav{display:none}.hero h1{font-size:28px}.hero-art{font-size:60px}}
+@media(max-width:480px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:11px}.hero{padding:24px 20px}.hero-art{display:none}.order{grid-template-columns:1fr}.section h2{font-size:20px}}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <div class="logo">EASY <span>TOP UP</span></div>
+  <nav><a href="#diamonds">Diamonds</a><a href="#passes">Pass</a><a href="#offers">Special Offer</a><a href="#order">Order</a></nav>
+  <a class="btn" href="#order">Top Up Now</a>
+</div></header>
+<main class="wrap">
+<section class="hero">
+ <div><div class="tag">⚡ FAST • EASY • SECURE</div><h1>Free Fire Top Up<br>সহজেই করুন!</h1>
+ <p>আপনার পছন্দের Diamond, Pass এবং Special Offer বেছে নিন।<br>সহজ অর্ডার ফর্ম থেকে প্যাকেজ নির্বাচন করুন।</p>
+ <a class="btn" href="#diamonds">প্যাকেজ দেখুন</a></div><div class="hero-art">💎</div>
+</section>
+<section class="section" id="diamonds">
+ <div class="section-head"><div><h2>💎 Normal FF Diamonds</h2><div class="sub">আপনার প্রয়োজন অনুযায়ী Diamond প্যাকেজ বেছে নিন</div></div></div>
+ <div class="grid" id="diamondGrid"></div>
+</section>
+<section class="section" id="passes">
+ <div class="section-head"><div><h2>🎟️ Pass & Membership</h2><div class="sub">জনপ্রিয় Pass প্যাকেজ</div></div></div>
+ <div class="grid" id="passGrid"></div>
+</section>
+<section class="section" id="offers">
+ <div class="section-head"><div><h2>🔥 Special Offer</h2><div class="sub">বিশেষ অফার প্যাকেজ</div></div></div>
+ <div class="grid" id="offerGrid"></div>
+</section>
+<section class="section">
+ <div class="notice"><b>অর্ডার করার আগে:</b> সঠিক Player ID দিন। এই পেজটি আপাতত ডিজাইন/ডেমো। এখানে কোনো বাস্তব অর্ডার, পেমেন্ট বা Diamond ডেলিভারি চালু নেই।</div>
+</section>
+<section class="section" id="order">
+ <div class="section-head"><div><h2>🛒 Order Form</h2><div class="sub">প্যাকেজ নির্বাচন করে অর্ডারের তথ্য লিখুন</div></div></div>
+ <div class="order">
+  <form onsubmit="event.preventDefault();alert('এটি শুধু ডেমো ফর্ম। বাস্তব অর্ডার এখনো চালু হয়নি।');">
+   <label>আপনার নাম</label><input required placeholder="নাম লিখুন">
+   <label>Free Fire Player ID</label><input required placeholder="Player ID লিখুন" inputmode="numeric">
+   <label>প্যাকেজ</label><select id="packageSelect" required><option value="">প্যাকেজ নির্বাচন করুন</option></select>
+   <label>যোগাযোগের নম্বর</label><input placeholder="মোবাইল নম্বর" inputmode="tel">
+   <button class="btn" style="width:100%;margin-top:16px" type="submit">অর্ডার সাবমিট (Demo)</button>
+  </form>
+  <div class="info"><h3>পেমেন্ট তথ্য</h3><p>পেমেন্ট ব্যবস্থা এখনো চালু করা হয়নি।</p><p><b>bKash:</b> Coming Soon</p><p><b>Nagad:</b> Coming Soon</p><hr style="border:0;border-top:1px solid #e8eee9"><p class="sub">কোনো PIN, OTP বা পাসওয়ার্ড এই ফর্মে দেবেন না।</p></div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap"><b>EASY TOP UP</b><br>Free Fire Top Up Demo Website<br>© 2026 EASY TOP UP. All rights reserved.</div></footer>
+<script>
+const products={
+diamond:[
+ ['25 Diamonds','💎'],['50 Diamonds','💎'],['115 Diamonds','💎'],['240 Diamonds','💎'],
+ ['355 Diamonds','💎'],['610 Diamonds','💎'],['1240 Diamonds','💎'],['2530 Diamonds','💎']
+],
+pass:[['Weekly Membership','🎟️'],['Monthly Membership','🎫'],['Level Up Pass','🚀']],
+offer:[['Special Offer 1','🔥'],['Special Offer 2','🎁'],['Special Offer 3','⭐']]
+};
+function render(id,items,extra=''){
+ const grid=document.getElementById(id),select=document.getElementById('packageSelect');
+ items.forEach(([name,icon])=>{
+  const card=document.createElement('article');card.className='card '+extra;
+  card.innerHTML=`<div class="product-icon">${icon}</div><h3>${name}</h3><p>Free Fire Top Up Package</p><div class="price">৳ —</div><button type="button">Select Package</button>`;
+  card.querySelector('button').onclick=()=>{select.value=name;document.getElementById('order').scrollIntoView({behavior:'smooth'});};
+  grid.appendChild(card);
+  const opt=document.createElement('option');opt.value=name;opt.textContent=name;select.appendChild(opt);
+ });
+}
+render('diamondGrid',products.diamond);render('passGrid',products.pass);render('offerGrid',products.offer,'offer');
+</script>
+</body>
+</html>

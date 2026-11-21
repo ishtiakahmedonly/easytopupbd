@@ -97,6 +97,64 @@ function render(id,items,extra=''){
  });
 }
 render('diamondGrid',products.diamond);render('passGrid',products.pass);render('offerGrid',products.offer,'offer');
+<script>
+const products={
+diamond:[
+ ['25 Diamonds','💎',25],
+ ['50 Diamonds','💎',40],
+ ['115 Diamonds','💎',85],
+ ['240 Diamonds','💎',165],
+ ['355 Diamonds','💎',245],
+ ['610 Diamonds','💎',415],
+ ['1240 Diamonds','💎',825],
+ ['2530 Diamonds','💎',1650]
+],
+pass:[
+ ['Weekly Membership','🎟️',165],
+ ['Monthly Membership','🎫',815]
+],
+offer:[
+ ['Special Offer 1','🔥',null],
+ ['Special Offer 2','🎁',null],
+ ['Special Offer 3','⭐',null]
+]
+};
+
+function render(id,items,extra=''){
+ const grid=document.getElementById(id);
+ const select=document.getElementById('packageSelect');
+
+ items.forEach(([name,icon,price])=>{
+  const card=document.createElement('article');
+  card.className='card '+extra;
+
+  const priceText=price===null?'দাম শীঘ্রই':`৳ ${price}`;
+
+  card.innerHTML=`
+   <div class="product-icon">${icon}</div>
+   <h3>${name}</h3>
+   <p>Free Fire Top Up Package</p>
+   <div class="price">${priceText}</div>
+   <button type="button">Select Package</button>
+  `;
+
+  card.querySelector('button').onclick=()=>{
+   select.value=name;
+   document.getElementById('order').scrollIntoView({behavior:'smooth'});
+  };
+
+  grid.appendChild(card);
+
+  const opt=document.createElement('option');
+  opt.value=name;
+  opt.textContent=name+' - '+priceText;
+  select.appendChild(opt);
+ });
+}
+
+render('diamondGrid',products.diamond);
+render('passGrid',products.pass);
+render('offerGrid',products.offer,'offer');
 </script>
 </body>
 </html>
